@@ -12,7 +12,7 @@ public class Greeter {
 		// iterate thru messages and print as "message 1", +name => Hello Priya, Welcome
 		// Priya, Bye Bye Priya
 		for(String msg: messages) {
-			System.out.println(msg+ " " +name);
+			System.out.println(name+ " " +msg);
 		}
 	}
 
