@@ -55,30 +55,45 @@ public class RestaurantServiceImpl implements IRestaurantService {
 	public List<Restaurant> getByCuisineLesserCost(String cuisine, double cost) {
 
 		List<Restaurant> Restaurants = restaurantDao.findByCuisineLesserCost(cuisine, cost);
+		if (Restaurants == null || Restaurants.isEmpty()) {
+			throw new RestaurantNotFoundException("No restaurant found");
+		}
 		return Restaurants;
 	}
 
 	@Override
 	public List<Restaurant> getByTypeLesserCost(String type, double cost) {
 		List<Restaurant> Restaurants = restaurantDao.findByTypeLesserCost(type, cost);
+		if (Restaurants == null || Restaurants.isEmpty()) {
+			throw new RestaurantNotFoundException("No restaurant found");
+		}
 		return Restaurants;
 	}
 
 	@Override
 	public List<Restaurant> getByTime(LocalDateTime availabilityTime) {
 		List<Restaurant> Restaurants = restaurantDao.findByTime(availabilityTime);
+		if (Restaurants == null || Restaurants.isEmpty()) {
+			throw new RestaurantNotFoundException("No restaurant found");
+		}
 		return Restaurants;
 	}
 
 	@Override
 	public List<Restaurant> getByRatingsAndType(String type, int ratings) {
 		List<Restaurant> Restaurants = restaurantDao.findByRatingsAndType(type, ratings);
+		if (Restaurants == null || Restaurants.isEmpty()) {
+			throw new RestaurantNotFoundException("No restaurant found");
+		}
 		return Restaurants;
 	}
 
 	@Override
 	public List<Restaurant> getByCity(String city) {
 		List<Restaurant> Restaurants = restaurantDao.findByCity(city);
+		if (Restaurants == null || Restaurants.isEmpty()) {
+			throw new RestaurantNotFoundException("No restaurant found");
+		}
 		return Restaurants;
 	}
 

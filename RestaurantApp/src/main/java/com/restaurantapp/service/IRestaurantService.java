@@ -28,6 +28,6 @@ public interface IRestaurantService {
 
 	List<Restaurant> getByRatingsAndType(String type, int ratings) throws RestaurantNotFoundException;
 
-	List<Restaurant> getByCity(String city);
+	List<Restaurant> getByCity(String city) throws RestaurantNotFoundException;
 
 }
